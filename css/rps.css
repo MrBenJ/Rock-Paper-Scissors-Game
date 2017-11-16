@@ -1,0 +1,143 @@
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'Muli', sans-serif;
+	color: #2d2d2d;
+	font-size: 300%;
+	width: 100%;
+	margin-left: 30%;
+}
+
+div {
+	margin-bottom: 12px;
+}
+
+.basics {
+	font-family: 'Muli', sans-serif;	
+	font-size: 200%;
+	margin-left: 33%;
+}
+
+#player {
+	color: #0066ff;	
+}
+
+#player_choices {
+	display: inline-block;
+}
+
+#computer {
+	color: #c884c6;	
+}
+
+#computer_choices {
+	display: inline-block;
+}
+
+#computer span:not(:first-child) {
+	cursor: default;
+}
+
+#result {
+	color: #2f4f4f;
+	margin-right: 33%;
+	border-top: solid black 1px;
+	border-bottom: solid black 1px;
+}
+
+.score {
+	color: #00ced1;
+}
+
+.space {
+	padding: 3px 12px;
+	border: 1px solid #2d2d2d;
+	border-radius: 100%;
+	cursor: pointer;
+}
+
+button {
+	font-family: 'Muli', sans-serif;
+	font-size: 100%;
+	background-color: white;
+	color: #0066ff;	
+	outline: none;
+}
+
+#buttonDiv button {
+	border-color: #2f8f8f;
+}
+
+#buttonDiv button:hover {
+	background-color: #d3d3d3;
+}
+
+@media all and (max-width: 991px) {
+	h1 {
+		margin-left: 21%;
+	}
+
+	.basics {
+		margin-left: 25%;
+	}
+}
+
+@media all and (max-width: 768px) {
+	h1 {
+		font-size: 250%;
+		margin-left: 20%;
+	}
+
+	.basics {
+		font-size: 167%;
+		margin-left: 24%;
+	}
+
+}
+
+@media all and (max-width: 630px) {
+	h1 {
+		margin-left: 16%;
+	}
+
+	.basics {
+		margin-left: 20%;
+	}	
+}
+
+@media all and (max-width: 580px) {
+	h1 {
+		font-size: 200%;
+	}
+
+	.basics {
+		font-size: 133%;
+	}
+}
+
+@media all and (max-width: 420px) {
+	h1 {
+		margin-left: 10%;
+	}
+
+	.basics {
+		margin-left: 13%;
+	}
+}
+
+@media all and (max-width: 372px) {
+	h1 {
+		font-size: 166%;
+		margin-left: 5%;
+	}
+
+	#player_choices {
+		display: block;
+	}
+
+	#computer_cohices {
+		display: block;
+	}
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/rps.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+	<title>Rock, Paper, Scissors!</title>
+</head>
+<body>
+	<h1>Rock, Paper, Scissors!</h1>
+	<div id="player" class="basics">
+		Player Choice:
+		<div id="player_choices">
+			<button id="pRock" class="space">R</button>
+			<button id="pPaper" class="space">P</button>
+			<button id="pScissors" class="space">S</button>			
+		</div>
+	</div>
+	<div id="computer" class="basics">
+		<span>Computer Choice:</span>
+		<div id="computer_choices">
+			<span id="cRock" class="space">R</span>
+			<span id="cPaper" class="space">P</span>
+			<span id="cScissors" class="space">S</span>
+		</div>
+	</div>
+	<div id="result" class="basics">
+		Result:
+		<span id="resultSpanTag"></span>
+	</div>
+	<div class="score basics">
+		<span>Player Score:</span> 
+		<span id="playerScore">0</span>
+	</div>
+	<div class="score basics">
+		<span>Computer Score:</span> 
+		<span id="compScore">0</span>
+	</div>
+	<div id="buttonDiv" class="basics">
+		<button id="nextRound">Next Round</button>
+		<button id="startOver">Start Over</button>
+	</div>
+	
+</body>
+<script src="js/rps.js"></script>
+</html>
