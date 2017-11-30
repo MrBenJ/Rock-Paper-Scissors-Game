@@ -1,3 +1,30 @@
+/*
+	It looks like you have the basics of CSS down.
+	Consider loading a reset.css or normalize.css before
+	implementing your own styles. More info on those here:
+
+	https://cssreset.com/what-is-a-css-reset/
+	https://necolas.github.io/normalize.css/
+
+	They are just external stylesheets you can load before your
+	own stylesheets. This will make things between all the different
+	browsers much more consistent and easier to work with
+*/
+ 
+/*
+	Now that you have the basics of CSS down, consider 
+	learning Sass, or Scss (same thing). This will make
+	your life easier and you will discover how fucking horrible
+	it is to write plain CSS.
+
+	http://sass-lang.com/
+
+	Another excellent alternative is PostCSS,
+	which is just a little bit newer and hot off the press
+
+	http://postcss.org/
+
+ */
 * {
 	box-sizing: border-box;
 }
@@ -20,6 +47,19 @@ div {
 	margin-left: 33%;
 }
 
+/* 
+	Stop using ids (#) in CSS. It is considered
+	bad practice, as you can only have one id per page.
+
+	There are several naming conventions to CSS classes.
+
+	AirBnB is known for BEM
+	http://getbem.com/introduction/
+
+	At my workplace, I enforce Object oriented CSS, or OOCSS
+	http://oocss.org/
+
+*/
 #player {
 	color: #0066ff;	
 }
@@ -51,6 +91,13 @@ div {
 	color: #00ced1;
 }
 
+/*
+	Using px is fine, but for users who scale their browser
+	window, px is an absolute unit and will not scale appropriately
+
+	Consider using rem or em instead for all your spacings.
+
+ */
 .space {
 	padding: 3px 12px;
 	border: 1px solid #2d2d2d;
@@ -74,7 +121,24 @@ button {
 	background-color: #d3d3d3;
 }
 
+/*
+	Rarely or seldom do I use @media all.
+
+	Typically, devs are more interested in screen size
+	and not "all" - 
+
+	Try this:
+
+	@media screen and (max-width: 991px) { styles }
+ */
+
 @media all and (max-width: 991px) {
+	/*
+		Using percentages for margin and padding is
+		really bad practice because of so many variances in 
+		device pixel density and resolution. Nothing will look
+		consistent across devices.
+	 */
 	h1 {
 		margin-left: 21%;
 	}
@@ -85,6 +149,30 @@ button {
 }
 
 @media all and (max-width: 768px) {
+
+	/*
+		Scaling font size with percentages is only 
+		acceptable in a base stylesheet, not for a media query.
+
+		A common trick I like to use is setting body font-size to 62.5%
+		so that rem units will translate to pixels on. 1:10 scale;
+
+		Example:
+
+		body {
+			font-size: 62.5%;
+		}
+
+		.text {
+			font-size: 1.4rem; // translates to scalable 14px
+		}
+
+		.text-large {
+			font-size: 2.8rem; // translates to 28px
+		}
+
+
+	 */
 	h1 {
 		font-size: 250%;
 		margin-left: 20%;
@@ -97,6 +185,25 @@ button {
 
 }
 
+/*
+	Too many media queries. The only ones you should ever need are:
+
+	1200px - large desktops
+	992px  - sm-md desktops and giant phones
+	768px  - Tablets, small desktops, medium phones
+	442px  - Small phones
+
+	Normally, I like to do this the other way.
+	instead of max-width - I use min-width and all my mobile
+	styles go first. 70% of all web traffic is mobile. Those styles
+	should be loaded/parsed first before doing desktop styles.
+
+	This will reduce render times in the browser by 50-100ms and 
+	push Time to interaction (TTI) lower, which is better for user
+	retention. Every 100ms added to TTI and/or load times
+	increases abandonment rate by ~10% or more.
+
+ */
 @media all and (max-width: 630px) {
 	h1 {
 		margin-left: 16%;

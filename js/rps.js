@@ -1,3 +1,38 @@
+/*
+	Overall
+
+	* Functions should be declared outside of the scope of your window.onload function.
+	
+	* Do not style with javascript. Add a class and style with CSS
+	    - The only exception to this rule is if you are using a CSS-in-JS library with
+	      an established framework like React/Angular/Vue
+		- CSS is for styling, JS is for interactions. Keep it separate to avoid fatigue
+		  and confusion
+
+	* Know the difference between window.load and DOMContentLoaded. This should all really be
+	  inside document.addEventListener('DOMContentLoaded', function() { ...blah })
+	
+	* Abstract and compose your code with functions that havea single responsibility.
+	  This will make your code much easier to read and understand.
+
+	  For example, playerChoices[i].click function should be a totally new function
+	  called "handlePlayerClick" 
+	
+	  Some of your functions like getRandomIntInclusive should really be scoped at the 
+	  top level. Putting it inside a loop will redeclare and add more event listeners
+	  unnecessarily, potentially causing memory leaks if these elements were to be
+	  removed from the DOM.
+
+	* Consider learning the new version of Javascript - anything ES6+ is great.
+	    - I did a talk at General Assembly in Downtown Los Angeles about this
+	      Link to slides here: https://mrbenj.github.io/es6-preso/
+	    - Another talk that would be great for you, but a little bit more advanced
+	      https://mrbenj.github.io/js-ecosystem-preso/#/
+	    - You can start using ES6+ with Babel transpiling. Link below
+          https://babeljs.io/
+  
+ */
+
 window.onload = function() {
 
 	/*I'm using global variables here for the scores. I think I should put them in a function with a closure or something to avoid this, but
